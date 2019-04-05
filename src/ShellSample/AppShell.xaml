@@ -81,8 +81,8 @@
         </ShellSection>
     </ShellItem>
     <ShellItem Title="Shell Item 2">
-        <ShellSection Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellSection Title="About" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </ShellSection>
     </ShellItem>
 
