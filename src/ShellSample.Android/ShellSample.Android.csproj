@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="c:\Users\mn\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.props" />
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -127,5 +127,5 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <Import Project="c:\Users\mn\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.targets" />
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.targets" />
 </Project>
