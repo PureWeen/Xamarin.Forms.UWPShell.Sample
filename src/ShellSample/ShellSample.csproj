@@ -1,11 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.props"/>
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.24">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;uap10.0.16299</TargetFrameworks>
     <ProduceAssemblyReference>true</ProduceAssemblyReference>
   </PropertyGroup>
+
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.props"
+          Condition="'$(TargetFramework)'=='uap10.0.16299'" />
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
@@ -15,8 +16,11 @@
   <ItemGroup>  
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'!='uap10.0.16299'">
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
+  </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='uap10.0.16299'">
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
@@ -43,6 +47,7 @@
     </None>
   </ItemGroup>
 
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.targets"/>
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.targets"
+          Condition="'$(TargetFramework)'=='uap10.0.16299'" />
 
 </Project>

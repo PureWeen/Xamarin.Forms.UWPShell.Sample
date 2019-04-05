@@ -5,9 +5,12 @@
        RouteHost="companyname.com"
        RouteScheme="app"
        Route="ShellSample"
-       FlyoutBehavior="Disabled"
        Title="ShellSample"
-       x:Class="ShellSample.AppShell">
+       x:Class="ShellSample.AppShell"
+       FlyoutHeader="Flyout Header Here"
+       FlyoutBehavior="Flyout"
+       FlyoutIsPresented="True"
+       >
 
     <!--
         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
