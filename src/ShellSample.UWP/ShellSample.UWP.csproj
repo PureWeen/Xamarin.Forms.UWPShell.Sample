@@ -175,6 +175,10 @@
       <Project>{06ecaa1b-0b1e-4294-acd3-63b35c8108e0}</Project>
       <Name>Xamarin.Forms.Xaml</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gastropod\Gastropod.csproj">
+      <Project>{633f9238-dd65-4f68-884d-d44ef461116c}</Project>
+      <Name>Gastropod</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShellSample\ShellSample.csproj">
       <Project>{ad3318ed-2211-46d6-ad97-c9632daa836a}</Project>
       <Name>ShellSample</Name>

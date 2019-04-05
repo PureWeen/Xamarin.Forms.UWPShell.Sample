@@ -25,7 +25,8 @@ namespace ShellSample.UWP
     {
         public MainPage()
         {
-            LoadApplication(new ShellSample.App());
+            //LoadApplication(new ShellSample.App());
+            LoadApplication(new Gastropod.App());
         }
     }
 }
