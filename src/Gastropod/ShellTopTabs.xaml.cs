@@ -10,6 +10,7 @@ namespace Gastropod
         public ShellTopTabs()
         {
             InitializeComponent();
+            
         }
     }
 }

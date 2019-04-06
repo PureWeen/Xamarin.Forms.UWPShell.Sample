@@ -1,51 +1,30 @@
-<Project Sdk="MSBuild.Sdk.Extras/2.0.24">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;uap10.0.16299</TargetFrameworks>
-    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
-
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.props"
-          Condition="'$(TargetFramework)'=='uap10.0.16299'" />
-
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.8055-pre1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="FlyoutHeader.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="FlyoutHeader.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Images\photo.png" />
-    <None Remove="Images\shells_01.jpg" />
-    <None Remove="Images\shell_01.jpg" />
-    <None Remove="Images\snail_01.jpg" />
-    <None Remove="ViewModels\CameraViewModel.config" />
-  </ItemGroup>
+  <PropertyGroup>
+    <XFDisableTargetsValidation>True</XFDisableTargetsValidation>
+  </PropertyGroup>
+  
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
+  
   <ItemGroup>
     <EmbeddedResource Include="Images\photo.png" />
     <EmbeddedResource Include="Images\shells_01.jpg" />
     <EmbeddedResource Include="Images\shell_01.jpg" />
     <EmbeddedResource Include="Images\snail_01.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Styles\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Pages\CameraPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='uap10.0.16299'">
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference ReferenceOutputAssembly="False" Include="..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\Xamarin.Forms.Build.Tasks.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
-    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
   </ItemGroup>
 
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\3.6.0.264807\build\Xamarin.Forms.targets"
-          Condition="'$(TargetFramework)'=='uap10.0.16299'" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' == 'true'" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' != 'true'" />
+  
 </Project>

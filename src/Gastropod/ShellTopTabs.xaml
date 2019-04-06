@@ -8,13 +8,18 @@
        FlyoutBehavior="Disabled"
        Title="Gastropods"
        x:Class="Gastropod.ShellTopTabs">
+
+
+  <Shell.TitleView>
+    <StackLayout>
+      <Label Text="Store Home"></Label>
+    </StackLayout>
+  </Shell.TitleView>
     
-    
-    
-    <ShellItem Title="Store Home" Shell.TitleView="Store HOme">
+    <ShellItem Title="Store Home">
         <ShellSection Title="Store Home">
             <ShellContent Title="Page 1" Icon="home.png">
-                <local:MainPage/>
+                <local:MainPage  />
             </ShellContent>
             <ShellContent Title="Page 2" Icon="home.png">
                 <local:MainPage/>
